@@ -5,17 +5,17 @@ import random
 class Mycmd(Cmd):
 
 
-    def fileread(file):
-        file = input ("Enter the fileName : ")
-        my_file = open(file, 'r')
-        file_contents = my_file.read()
-        return file_contents
+    #def fileread(file):
+     #   file = input ("Enter the fileName : ")
+      #  my_file = open(file, 'r')
+       # file_contents = my_file.read()
+        #return file_contents
 
     
     def do_openfile(self, args):
-        #file = input("Enter file name : ")
-        #my_file = open(file,'r')
-        #file_contents = my_file.read()
+        file = input("Enter file name : ")
+        my_file = open(file,'r')
+        file_contents = my_file.read()
         values=fileread()
         print(values)    
 
@@ -83,4 +83,3 @@ if __name__ == '__main__':
     values = Mycmd()
     values.prompt = '>>'
     values.cmdloop('Starting cmd Prompt...')
-    

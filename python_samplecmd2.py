@@ -5,22 +5,11 @@ import random
 class Mycmd(Cmd):
 
     
-    def do_fileopen(self, args):
-        my_file = open("/home/ankit/Python_practise/file1.txt",'r')
-        file_contents = my_file.read()
-        print(file_contents)
-        #fileName = input("File Name to open : ")
-      #  with open(file, 'r') as f:
-       #     return do_fileopen(f)
-    #print(do_fileopen(fileName))
-        
-     
-#    def do_filename(file):
- #      my_file = open(file, 'r')
-  #     return my_file
-   # file=input("File : ")
-    #print(do_filename(file))
-   
+    def do_openfile(self, args):
+        file = input("Enter file name : ")
+        fhand = open(file,'r')
+        full_txt = fhand.read()
+        print(full_txt)    
 
     def do_wordcount(self, args):
         my_file = open("/home/ankit/Python_practise/file1.txt",'r')
@@ -58,10 +47,19 @@ class Mycmd(Cmd):
         my_file = open("/home/ankit/Python_practise/file1.txt",'r')
         file_contents = my_file.read()
         values = file_contents.split()
-        #counts = []
-        #for word in values:
-        #    counts.append(values.count(word))
-        print(random.choice(values))
+        print(random.sample(values,10))
+
+
+    def do_lengthword(self, args):
+        word=input("Word is : ")
+        w1=len(word)
+        my_file = open("/home/ankit/Python_practise/file1.txt",'r')
+        file_contents = my_file.read()
+        values = file_contents.split()
+        for w in values:
+            if len(w)>w1:
+                print(w)
+            
 
 
     def do_quit(self, args):
